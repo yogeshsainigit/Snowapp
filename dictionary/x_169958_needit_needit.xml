@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" extends="task" label="Needit" max_length="40" name="x_169958_needit_needit" type="collection">
+    <element audit="true" extends="task" label="Needit" max_length="40" name="x_169958_needit_needit" sizeclass="7" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Others" max_length="40" name="u_others" type="string"/>
         <element label="Requested For" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" choice="1" default="legal" label="Request Type" mandatory="true" max_length="40" name="u_request_type" type="string">
             <choice>
                 <element inactive_on_update="false" label="Human Resources" sequence="0" value="hr"/>
+                <element inactive="true" inactive_on_update="true" label="Others" sequence="0" value="others"/>
                 <element inactive_on_update="false" label="Facilities" sequence="1" value="facilities"/>
                 <element inactive_on_update="false" label="Legal" sequence="2" value="legal"/>
                 <element inactive_on_update="false" label="Your Department Coice" sequence="3" value="your coice"/>
@@ -17,6 +19,7 @@
                 <element inactive_on_update="false" label="Facilities2" sequence="3" value="facilities2"/>
                 <element inactive_on_update="false" label="Leagl1" sequence="4" value="leagl1"/>
                 <element inactive_on_update="false" label="Leagl2" sequence="5" value="leagl2"/>
+                <element inactive_on_update="false" label="Others" sequence="6" value="others"/>
             </choice>
         </element>
         <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
